@@ -1,0 +1,10 @@
+Teach A = "apples"
+Teach B = "bananas"
+Teach O = "oranges"
+List
+Teach B = true
+Teach O = true
+Teach A -> B
+Teach A -> O
+Query (B|O)
+Why (B|O)

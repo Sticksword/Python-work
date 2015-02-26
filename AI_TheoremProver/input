@@ -1,0 +1,40 @@
+Teach x = 100
+Teach y = "Michael is awesome"
+Teach z = "Karen sux"
+Teach qq = "This world is upside down"
+Teach gg = "I hate being sick"
+Teach y = true
+Teach z = true
+Teach !f -> w
+Teach gg = false
+Teach y -> z
+Teach y -> x
+Teach a = true
+Teach !y&!z -> qq
+Teach y&!(z|qq) -> x
+Teach x&y&p -> qq
+Teach y&z -> gg
+Teach !s -> s
+Teach !T -> T
+List
+Query !(q&w&e&r&t&y)
+Query q&w&e&r&t&y
+Query q&w&e&r&t|y
+Why y&z
+Learn
+Query (y&z)
+Teach A = "apples"
+Teach B = "bananas"
+Teach O = "oranges"
+Teach A -> B
+Teach B -> O
+Teach A = true
+List
+Query O
+Why O
+Learn
+Teach A = false
+Teach B = false
+Query O
+Why O
+List

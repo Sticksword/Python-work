@@ -1,0 +1,13 @@
+Teach A = "apples"
+Teach B = "bananas"
+Teach O = "oranges"
+Teach A -> B
+Teach B -> O
+Teach A = true
+Query O
+Why O
+Learn
+Teach A = false
+Teach B = false
+Query O
+Why O

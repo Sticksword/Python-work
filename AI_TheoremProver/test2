@@ -1,0 +1,7 @@
+Teach A = "apples"
+Teach B = "bananas"
+Teach O = "oranges"
+Teach A = true
+Teach B = true
+Teach O = true
+Why (A|B|O)

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% comment %}
+  This is the main template for all portal pages.
+{% endcomment %}
+
+{% block head %}
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css">
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet'>
+  <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Django Masters | {% block title %}{% endblock %}</title>
+{% endblock %}
+
+{% block body %}
+<!--   <header>
+    <h1>Django Masters | Web Portal</h1>
+  </header> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="{%  static 'app.js' %}"></script>
+    <div class="header">
+      <div class="container">
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/logout/">Logout</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">More <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/blog/create_post/">Create Bulletin</a></li>
+              <li><a href="/blog/">View Bulletins</a></li>
+              <li><a href="/blog/search_form/">Search Bulletins</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slider">
+
+      <div class="slide active-slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Secure Witness</h1>
+                {% block content %}{% endblock %}
+            </div>
+            <div class="slide-img col-xs-7">
+              picture here
+            </div>
+          </div>
+        </div>      
+      </div>
+
+      <div class="slide slide-feature">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              perhaps another picture
+            </div>
+            
+          </div>
+        </div>      
+      </div> 
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Trust in Us</h1>
+              <h2>Encryption protected file uploads</h2>
+              <p>Let us help you store important documents.</p>
+              
+            </div>
+            <div class="slide-img col-xs-7">
+              picture here
+            </div>
+          </div>
+        </div>      
+      </div> 
+
+
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Share and connect</h1>
+              <p>Check out what others post and see what others are saying on Secure Witness.</p>
+              
+            </div>
+            <div class="slide-img col-xs-7">
+              another picture here
+            </div>
+          </div>
+        </div>      
+      </div> 
+
+    </div>
+
+    <div class="slider-nav">
+      <a href="#" class="arrow-prev"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-prev.png"></a>
+      <ul class="slider-dots">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+      </ul>
+      <a href="#" class="arrow-next"><img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/arrow-next.png"></a>
+    </div> 
+
+  <footer>
+    <span>&copy; 2014, Django Masters</span>
+  </footer>
+{% endblock %}

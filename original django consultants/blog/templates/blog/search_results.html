@@ -1,0 +1,12 @@
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if books %}
+    <p>Found {{ bulletins|length }} bulletin{{ bulletins|pluralize }}.</p>
+    <ul>
+        {% for bulletin in bulletins %}
+        <li>{{ bulletin.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No bulletins matched your search criteria.</p>
+{% endif %}

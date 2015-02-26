@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    {% if error %}
+        <p style="color: red;">Please submit a search term.</p>
+    {% endif %}
+    <form action="" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+
+<p>You searched for: <strong>{{ query }}</strong></p>
+
+{% if Bulletins %}
+    <p>Found {{ Bulletins|length }} book{{ Bulletins|pluralize }}.</p>
+    <ul>
+        {% for book in Bulletins %}
+        <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No Bulletins matched your search criteria.</p>
+{% endif %}
+</body>
+
+</html>

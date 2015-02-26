@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% autoescape on %}
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+  <body>
+    <h1>UVa CS 4740 Spring 2015 Grocery Buddy</h1>
+    <p>A service by Michael Chen (mzc2fd)</p>
+    <h2>Grocery List for {{ user }}</h2>
+    <table border="1">
+    <tr>
+        <td>picture</td>
+        <td>Time Added</td>
+        <td>name</td>
+        <td>cost (per item)</td>
+        <td>number</td>
+        <td>total</td>
+    </tr>
+    {% for item in items %}
+      <tr>
+        <td><img src="/img?key_id={{ item.key.id() }}" /></td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.name }}</td>
+        <td>${{ item.cost }}</td>
+        <td>{{ item.number }}</td>
+        <td>${{ item.total }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    Total: ${{ total }}
+
+    <h2>Add a new item to the Grocery List</h2>
+{#    <form action="/additem?grocerylist_name={{ grocerylist_name }}" enctype="multipart/form-data" method="post"> #}
+    <form action="/additem" enctype="multipart/form-data" method="post">
+      <div>Name<input name="name" rows="1" cols="40"></div>
+      <div>Cost<input name="cost" rows="1" cols="40"></div>
+      <div>How many<input name="number"rows="1" cols="40"></div>
+      <div>
+          <label>Picture:</label>
+          <input type="file" name="img"/>
+      </div>
+      <div><input type="submit" name="add" value="Add Grocery Item"></div>
+      <p></p>
+      <div><input type="submit" name="clear" value="Delete All Grocery Items"></div>
+    </form>
+
+    <hr>
+
+{#    <form>Grocery list name:#}
+{#      <input value="{{ grocerylist_name }}" name="grocerylist_name">#}
+{#      <input type="submit" value="switch">#}
+{#    </form>#}
+
+    <a href="{{ url|safe }}">{{ url_linktext }}</a>
+
+  </body>
+</html>
+{% endautoescape %}

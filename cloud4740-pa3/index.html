@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% autoescape on %}
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+  <body>
+    <h1>UVa CS 4740 Spring 2015 Grocery Buddy</h1>
+    <p>A service by Michael Chen (mzc2fd)</p>
+
+
+    <a href="{{ url|safe }}">{{ url_linktext }}</a>
+
+  </body>
+</html>
+{% endautoescape %}
