@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% autoescape on %}
+<html>
+<head>
+  <link type="text/css" rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+  <body>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Welcome Students!</h2>
+            <form>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+
+        <div class="col-md-8">
+            <h1>Summer 2015 Tennis Instruction Schedule</h1>
+            <table border="1" class="table">
+                <thead>
+                    <tr>
+{#                        <td>picture</td>#}
+                        <td>day of week</td>
+                        <td>date</td>
+                        <td>time</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                      <tr>
+{#                        <td><img src="/img?key_id={{ entry.key.id() }}" /></td>#}
+                        <td>{{ entry.day }}</td>
+                        <td>{{ entry.date }}</td>
+                        <td>{{ entry.time }}</td>
+                      </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+
+    <a href="{{ url|safe }}">
+        <input type="button" name="login" value={{ url_linktext }} />
+    </a>
+
+  </body>
+</html>
+{% endautoescape %}
